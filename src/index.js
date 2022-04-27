@@ -18,3 +18,5 @@ seneca.add('role:math, cmd:product', (msg, respond) => {
 seneca.act({role: 'math', cmd: 'sum', left: 1, right: 2}, console.log)
     .act({role: 'math', cmd: 'product', left: 2, right: 3}, console.log)
     .act({role: 'math', cmd: 'sum', left: 4.5, right: 4.5, integer: true}, console.log)
+
+seneca.use(require('./math')).act('role:math,cmd:product,left:1,right:2', console.log)
